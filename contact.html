@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | CSC-ACV</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css" rel="stylesheet">
+    <style>
+        :root {
+            --csc-green: #1E8A42;
+            --csc-green-light: #25A54E;
+            --csc-green-dark: #176B33;
+        }
+        #map { height: 400px; }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header identique à index.html -->
+    <header class="bg-white shadow-lg"><!-- ... --></header>
+
+    <!-- Hero Section Contact -->
+    <section class="bg-gradient-to-r from-green-50 to-white py-12">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl font-bold text-gray-800 mb-4">Contactez-nous</h1>
+            <p class="text-xl text-gray-600">Nous sommes là pour vous aider. Trouvez votre bureau local ou envoyez-nous un message.</p>
+        </div>
+    </section>
+
+    <!-- Recherche de Bureau -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-2xl font-semibold text-gray-800 mb-6">Trouvez votre bureau local</h2>
+                
+                <!-- Barre de recherche -->
+                <div class="mb-8">
+                    <div class="flex gap-4">
+                        <div class="flex-1">
+                            <input 
+                                type="text" 
+                                id="searchLocation" 
+                                placeholder="Entrez votre code postal ou commune" 
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-csc-green focus:border-transparent"
+                            >
+                        </div>
+                        <button 
+                            onclick="searchOffices()" 
+                            class="bg-csc-green text-white px-6 py-3 rounded-lg hover:bg-csc-green-dark transition-colors"
+                        >
+                            Rechercher
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Carte -->
+                <div id="map" class="rounded-xl shadow-lg mb-8"></div>
+
+                <!-- Résultats de recherche -->
+                <div id="searchResults" class="space-y-4">
+                    <!-- Les résultats seront ajoutés dynamiquement ici -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formulaire de Contact -->
+    <section class="py-12 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto bg-white rounded-xl shadow-lg p-8">
+                <h2 class="text-2xl font-semibold text-gray-800 mb-6">Envoyez-nous un message</h2>
+                
+                <form id="contactForm" class="space-y-6">
+                    <!-- Type de demande -->
+                    <div>
+                        <label class="block text-gray-700 mb-2" for="requestType">Type de demande</label>
+                        <select 
+                            id="requestType" 
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-csc-green focus:border-transparent"
+                            required
+                        >
+                            <option value="">Sélectionnez le type de demande</option>
+                            <option value="chomage">Question chômage</option>
+                            <option value="affiliation">Affiliation</option>
+                            <option value="juridique">Conseil juridique</option>
+                            <option value="autre">Autre</option>
+                        </select>
+                    </div>
+
+                    <!-- Informations personnelles -->
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-gray-700 mb-2" for="firstname">Prénom</label>
+                            <input 
+                                type="text" 
+                                id="firstname" 
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-csc-green focus:border-transparent"
+                                required
+                            >
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 mb-2" for="lastname">Nom</label>
+                            <input 
+                                type="text" 
+                                id="lastname" 
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-csc-green focus:border-transparent"
+                                required
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Contact -->
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-gray-700 mb-2" for="email">Email</label>
+                            <input 
+                                type="email" 
+                                id="email" 
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-csc-green focus:border-transparent"
+                                required
+                            >
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 mb-2" for="phone">Téléphone</label>
+                            <input 
+                                type="tel" 
+                                id="phone" 
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-csc-green focus:border-transparent"
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Message -->
+                    <div>
+                        <label class="block text-gray-700 mb-2" for="message">Votre message</label>
+                        <textarea 
+                            id="message" 
+                            rows="5" 
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-csc-green focus:border-transparent"
+                            required
+                        ></textarea>
+                    </div>
+
+                    <!-- RGPD -->
+                    <div class="flex items-start space-x-3">
+                        <input 
+                            type="checkbox" 
+                            id="rgpd" 
+                            class="mt-1" 
+                            required
+                        >
+                        <label class="text-sm text-gray-600" for="rgpd">
+                            J'accepte que mes données personnelles soient traitées conformément à la politique de confidentialité de la CSC.
+                        </label>
+                    </div>
+
+                    <!-- Submit -->
+                    <button 
+                        type="submit" 
+                        class="w-full bg-csc-green text-white px-6 py-3 rounded-lg hover:bg-csc-green-dark transition-colors font-medium"
+                    >
+                        Envoyer le message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Rapide -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-2xl font-semibold text-gray-800 mb-8">Questions fréquentes</h2>
+                
+                <div class="space-y-4">
+                    <details class="bg-gray-50 p-6 rounded-lg">
+                        <summary class="font-medium text-gray-800 cursor-pointer">Quand puis-je recevoir mon allocation de chômage ?</summary>
+                        <p class="mt-4 text-gray-600">Les paiements sont effectués dans les premiers jours du mois suivant votre déclaration...</p>
+                    </details>
+
+                    <details class="bg-gray-50 p-6 rounded-lg">
+                        <summary class="font-medium text-gray-800 cursor-pointer">Comment devenir membre de la CSC ?</summary>
+                        <p class="mt-4 text-gray-600">Vous pouvez vous affilier en ligne via notre formulaire d'inscription ou dans l'un de nos bureaux...</p>
+                    </details>
+
+                    <details class="bg-gray-50 p-6 rounded-lg">
+                        <summary class="font-medium text-gray-800 cursor-pointer">Où trouver mes documents fiscaux ?</summary>
+                        <p class="mt-4 text-gray-600">Vos documents fiscaux sont disponibles dans votre espace personnel "Ma CSC" dès le mois de février...</p>
+                    </details>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer identique à index.html -->
+    <footer class="bg-gray-800 text-white py-12"><!-- ... --></footer>
+
+    <script>
+        // Initialisation de la carte
+        const map = L.map('map').setView([50.8503, 4.3517], 8);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+
+        // Exemple de données de bureaux
+        const offices = [
+            { name: 'CSC Bruxelles', lat: 50.8503, lng: 4.3517, address: 'Rue Example 123' },
+            { name: 'CSC Liège', lat: 50.6326, lng: 5.5797, address: 'Rue Test 456' },
+            { name: 'CSC Charleroi', lat: 50.4108, lng: 4.4446, address: 'Rue Demo 789' }
+        ];
+
+        // Fonction de recherche
+        function searchOffices() {
+            const input = document.getElementById('searchLocation').value;
+            const resultsDiv = document.getElementById('searchResults');
+            resultsDiv.innerHTML = ''; // Clear previous results
+
+            // Simuler une recherche
+            offices.forEach(office => {
+                const officeCard = document.createElement('div');
+                officeCard.className = 'bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow';
+                officeCard.innerHTML = `
+                    <h3 class="font-semibold text-gray-800 mb-2">${office.name}</h3>
+                    <p class="text-gray-600 mb-4">${office.address}</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-csc-green hover:underline">Voir sur la carte</a>
+                        <a href="#" class="text-csc-green hover:underline">Itinéraire</a>
+                    </div>
+                `;
+                resultsDiv.appendChild(officeCard);
+
+                // Ajouter un marqueur sur la carte
+                L.marker([office.lat, office.lng])
+                    .addTo(map)
+                    .bindPopup(office.name);
+            });
+
+            // Centrer la carte sur le premier résultat
+            if (offices.length > 0) {
+                map.setView([offices[0].lat, offices[0].lng], 12);
+            }
+        }
+
+        // Gestionnaire de formulaire
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Simulation d'envoi
+            alert('Votre message a été envoyé avec succès !');
+        });
+    </script>
+</body>
+</html>
