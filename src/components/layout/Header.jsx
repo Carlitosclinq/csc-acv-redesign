@@ -16,7 +16,7 @@ const Header = () => {
             <span className="text-xl font-bold hidden md:inline">CSC | ACV</span>
           </div>
 
-          <nav className="hidden md:flex space-x-6">
+          <nav className="hidden md:flex space-x-6 items-center">
             <Link 
               to="/ma-csc" 
               className="flex items-center space-x-2 bg-green-700 px-4 py-2 rounded-lg hover:bg-green-800"
@@ -30,7 +30,7 @@ const Header = () => {
           </nav>
 
           <button 
-            className="md:hidden"
+            className="md:hidden text-white p-2 rounded-lg hover:bg-green-700"
             onClick={() => setMenuOpen(!menuOpen)}
           >
             Menu
@@ -39,10 +39,10 @@ const Header = () => {
 
         {menuOpen && (
           <nav className="mt-4 space-y-2 md:hidden">
-            <Link to="/ma-csc" className="block px-4 py-2 hover:bg-green-700">Mon espace</Link>
-            <Link to="/travailleurs" className="block px-4 py-2 hover:bg-green-700">Travailleurs</Link>
-            <Link to="/chomage" className="block px-4 py-2 hover:bg-green-700">Chômage</Link>
-            <Link to="/affiliation" className="block px-4 py-2 hover:bg-green-700">S'affilier</Link>
+            <Link to="/ma-csc" className="block px-4 py-2 hover:bg-green-700 rounded-lg">Mon espace</Link>
+            <Link to="/travailleurs" className="block px-4 py-2 hover:bg-green-700 rounded-lg">Travailleurs</Link>
+            <Link to="/chomage" className="block px-4 py-2 hover:bg-green-700 rounded-lg">Chômage</Link>
+            <Link to="/affiliation" className="block px-4 py-2 hover:bg-green-700 rounded-lg">S'affilier</Link>
             <div className="px-4 py-2">
               <LanguageSwitcher />
             </div>
