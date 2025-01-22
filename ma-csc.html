@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ma CSC | Mon Espace Personnel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --csc-green: #1E8A42;
+            --csc-green-light: #25A54E;
+            --csc-green-dark: #176B33;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div class="min-h-screen flex flex-col">
+        <!-- Header -->
+        <header class="bg-white shadow-lg">
+            <nav class="container mx-auto px-4 py-4">
+                <div class="flex justify-between items-center">
+                    <div class="flex items-center gap-12">
+                        <a href="/" class="flex items-center gap-2">
+                            <img src="logo-placeholder.svg" alt="CSC-ACV Logo" class="h-12">
+                        </a>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <span class="text-gray-700">Bonjour, Jean Dupont</span>
+                        <button class="text-gray-600">FR | NL</button>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Main Content -->
+        <main class="flex-grow container mx-auto px-4 py-8">
+            <!-- Dashboard Header -->
+            <div class="mb-8">
+                <h1 class="text-3xl font-bold text-gray-800">Mon Espace Personnel</h1>
+                <p class="text-gray-600 mt-2">Gérez vos documents et suivez vos dossiers</p>
+            </div>
+
+            <!-- Notifications -->
+            <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-8 rounded-r-lg">
+                <div class="flex items-start">
+                    <div class="ml-3">
+                        <p class="text-sm text-yellow-700">
+                            Vous avez 2 documents à compléter pour votre dossier chômage
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Actions Grid -->
+            <div class="grid md:grid-cols-3 gap-6 mb-8">
+                <!-- Carte de contrôle -->
+                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                    <h2 class="text-xl font-semibold text-gray-800 mb-4">Carte de contrôle</h2>
+                    <div class="space-y-4">
+                        <p class="text-gray-600">Janvier 2025</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">Statut: À compléter</span>
+                            <a href="/carte-controle" class="text-csc-green hover:text-csc-green-dark">Remplir →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paiements -->
+                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                    <h2 class="text-xl font-semibold text-gray-800 mb-4">Derniers paiements</h2>
+                    <div class="space-y-3">
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Décembre 2024</span>
+                            <span class="font-medium">1245,30 €</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Novembre 2024</span>
+                            <span class="font-medium">1245,30 €</span>
+                        </div>
+                        <a href="/paiements" class="text-csc-green hover:text-csc-green-dark text-sm">Voir tout l'historique</a>
+                    </div>
+                </div>
+
+                <!-- Documents -->
+                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                    <h2 class="text-xl font-semibold text-gray-800 mb-4">Mes documents</h2>
+                    <div class="space-y-3">
+                        <a href="#" class="block text-gray-600 hover:text-csc-green">Fiche fiscale 2024</a>
+                        <a href="#" class="block text-gray-600 hover:text-csc-green">Attestation de paiement</a>
+                        <a href="#" class="block text-gray-600 hover:text-csc-green">C4</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mes Dossiers -->
+            <div class="bg-white rounded-xl shadow-sm p-6 mb-8">
+                <h2 class="text-xl font-semibold text-gray-800 mb-6">Mes dossiers en cours</h2>
+                <div class="space-y-4">
+                    <div class="border-b pb-4">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="font-medium text-gray-800">Dossier chômage temporaire</h3>
+                                <p class="text-sm text-gray-600 mt-1">Ouvert le 15/12/2024</p>
+                            </div>
+                            <span class="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm">En traitement</span>
+                        </div>
+                    </div>
+                    <div class="border-b pb-4">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="font-medium text-gray-800">Prime de fin d'année</h3>
+                                <p class="text-sm text-gray-600 mt-1">Ouvert le 01/12/2024</p>
+                            </div>
+                            <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">Complété</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mes Actions -->
+            <div class="bg-white rounded-xl shadow-sm p-6">
+                <h2 class="text-xl font-semibold text-gray-800 mb-6">Actions rapides</h2>
+                <div class="grid md:grid-cols-4 gap-4">
+                    <a href="#" class="text-center p-4 border rounded-lg hover:border-csc-green hover:text-csc-green transition-colors">
+                        <span>Déclarer une période</span>
+                    </a>
+                    <a href="#" class="text-center p-4 border rounded-lg hover:border-csc-green hover:text-csc-green transition-colors">
+                        <span>Télécharger une attestation</span>
+                    </a>
+                    <a href="#" class="text-center p-4 border rounded-lg hover:border-csc-green hover:text-csc-green transition-colors">
+                        <span>Contacter mon délégué</span>
+                    </a>
+                    <a href="#" class="text-center p-4 border rounded-lg hover:border-csc-green hover:text-csc-green transition-colors">
+                        <span>Mettre à jour mon profil</span>
+                    </a>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer simplifié -->
+        <footer class="bg-gray-800 text-white py-6">
+            <div class="container mx-auto px-4 text-center">
+                <p class="text-sm text-gray-400">&copy; 2025 CSC-ACV. Tous droits réservés.</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
