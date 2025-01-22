@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSC-ACV | Votre Syndicat</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --csc-green: #1E8A42;
+            --csc-green-light: #25A54E;
+            --csc-green-dark: #176B33;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Bannière d'annonce importante -->
+    <div class="bg-csc-green text-white text-center py-2">
+        <p>🔔 Information importante sur les paiements de janvier 2025</p>
+    </div>
+
+    <!-- Header avec navigation -->
+    <header class="bg-white shadow-lg">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center gap-12">
+                    <img src="logo-placeholder.svg" alt="CSC-ACV Logo" class="h-12">
+                    <div class="hidden md:flex space-x-8">
+                        <a href="/ma-csc" class="font-semibold text-gray-700 hover:text-green-600">Ma CSC</a>
+                        <a href="/chomage" class="font-semibold text-gray-700 hover:text-green-600">Chômage</a>
+                        <a href="/affiliation" class="font-semibold text-gray-700 hover:text-green-600">Affiliation</a>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4">
+                    <a href="/login" class="bg-csc-green text-white px-6 py-2 rounded-full hover:bg-csc-green-dark">Se connecter</a>
+                    <button class="text-gray-600">FR | NL</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-green-50 to-white py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h1 class="text-4xl font-bold text-gray-800 mb-6">Bienvenue à la CSC</h1>
+                    <p class="text-xl text-gray-600 mb-8">Votre partenaire syndical pour la défense de vos droits et l'amélioration de vos conditions de travail.</p>
+                    <div class="flex gap-4">
+                        <a href="/chomage/declaration" class="bg-csc-green text-white px-8 py-3 rounded-full hover:bg-csc-green-dark inline-block">Déclarer mon chômage</a>
+                        <a href="/affiliation/nouveau" class="border-2 border-csc-green text-csc-green px-8 py-3 rounded-full hover:bg-green-50 inline-block">Devenir membre</a>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <img src="hero-placeholder.svg" alt="CSC Workers" class="w-full">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Rapides -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-8 text-center">Accès Rapide</h2>
+            <div class="grid md:grid-cols-4 gap-6">
+                <a href="/chomage/carte" class="p-6 bg-gray-50 rounded-xl hover:shadow-lg transition-shadow">
+                    <h3 class="font-semibold text-gray-800 mb-2">Ma carte de contrôle</h3>
+                    <p class="text-gray-600">Remplir ma carte de chômage en ligne</p>
+                </a>
+                <a href="/paiements" class="p-6 bg-gray-50 rounded-xl hover:shadow-lg transition-shadow">
+                    <h3 class="font-semibold text-gray-800 mb-2">Mes paiements</h3>
+                    <p class="text-gray-600">Suivi des paiements chômage</p>
+                </a>
+                <a href="/documents" class="p-6 bg-gray-50 rounded-xl hover:shadow-lg transition-shadow">
+                    <h3 class="font-semibold text-gray-800 mb-2">Mes documents</h3>
+                    <p class="text-gray-600">Attestations et formulaires</p>
+                </a>
+                <a href="/contact" class="p-6 bg-gray-50 rounded-xl hover:shadow-lg transition-shadow">
+                    <h3 class="font-semibold text-gray-800 mb-2">Nous contacter</h3>
+                    <p class="text-gray-600">Trouvez votre bureau local</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Actualités et Actions -->
+    <section class="py-12 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Actualités -->
+                <div>
+                    <h2 class="text-2xl font-semibold text-gray-800 mb-6">Actualités</h2>
+                    <div class="space-y-6">
+                        <article class="bg-white p-6 rounded-xl shadow-sm">
+                            <h3 class="font-semibold text-gray-800 mb-2">Indexation des allocations sociales</h3>
+                            <p class="text-gray-600 mb-4">Les montants des allocations sociales sont adaptés à partir du 1er janvier 2025.</p>
+                            <a href="#" class="text-csc-green hover:underline">Lire la suite →</a>
+                        </article>
+                        <article class="bg-white p-6 rounded-xl shadow-sm">
+                            <h3 class="font-semibold text-gray-800 mb-2">Nouvelles mesures pour l'emploi</h3>
+                            <p class="text-gray-600 mb-4">Découvrez les changements importants pour 2025.</p>
+                            <a href="#" class="text-csc-green hover:underline">Lire la suite →</a>
+                        </article>
+                    </div>
+                </div>
+
+                <!-- Actions Syndicales -->
+                <div>
+                    <h2 class="text-2xl font-semibold text-gray-800 mb-6">Actions Syndicales</h2>
+                    <div class="space-y-6">
+                        <div class="bg-white p-6 rounded-xl shadow-sm border-l-4 border-csc-green">
+                            <span class="text-sm text-gray-500">28 janvier 2025</span>
+                            <h3 class="font-semibold text-gray-800 my-2">Manifestation nationale</h3>
+                            <p class="text-gray-600">Pour la défense du pouvoir d'achat et des services publics</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl shadow-sm border-l-4 border-csc-green">
+                            <span class="text-sm text-gray-500">15 février 2025</span>
+                            <h3 class="font-semibold text-gray-800 my-2">Assemblée générale</h3>
+                            <p class="text-gray-600">Discussion sur les nouvelles conventions collectives</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="font-semibold mb-4">À propos de la CSC</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-300 hover:text-white">Qui sommes-nous</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white">Notre mission</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white">Structure</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-4">Services</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-300 hover:text-white">Chômage</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white">Juridique</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white">Formation</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-4">Contact</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-300 hover:text-white">Trouvez un bureau</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white">Service clientèle</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white">FAQ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-4">Suivez-nous</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-white">Facebook</a>
+                        <a href="#" class="text-gray-300 hover:text-white">Twitter</a>
+                        <a href="#" class="text-gray-300 hover:text-white">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-700 text-center text-gray-400">
+                <p>© 2025 CSC-ACV. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
